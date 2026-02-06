@@ -13,7 +13,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 5.0f;
     public float jumpStrength = 5.0f;
-    public float extraGroundCheckDistance = 0.1f;
+    public float jumpBufferTime = 0.2f;
+    public float jumpCoyoteTime = 0.2f;
+    public float extraGroundCheckDistance = 0.05f;
     public float fallMultiplier = 2.0f;
 
     public JumpState jumpState = JumpState.Grounded;
@@ -26,14 +28,19 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 movementInput;
 
     private InputAction jumpAction;
-    private bool jumpInput = false;
-    private BufferedAction jumpBufferedAction = new BufferedAction(0.2f, 0.3f);
+    private InputTracker jumpInputTracker = new InputTracker();
+    private BufferedAction jumpBufferedAction;
+    private float lastGroundedTime = 0.0f;
+    private bool canJump = true;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+
         moveAction = InputSystem.actions.FindAction("Move");
+
         jumpAction = InputSystem.actions.FindAction("Jump");
+        jumpBufferedAction = new BufferedAction(jumpBufferTime, 0.3f);
     }
 
     void Update()
@@ -54,13 +61,12 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 input = moveAction.ReadValue<Vector2>();
         movementInput = new Vector3(input.x, 0.0f, input.y);
-
-        jumpInput = jumpAction.IsPressed();
+        jumpInputTracker.SetPressed(jumpAction.IsPressed());
     }
 
     void ApplyGravity()
     {
-        if (!controller.isGrounded)
+        if (jumpState != JumpState.Grounded)
         {
             float fallDeltaSpeed = Physics.gravity.y * Time.fixedDeltaTime;
             if (jumpState == JumpState.Falling || jumpState == JumpState.Rising)
@@ -90,16 +96,27 @@ public class PlayerMovement : MonoBehaviour
 
     void JumpCharacter()
     {
-        if (jumpBufferedAction.IsActing(jumpInput, controller.isGrounded))
+        if (Time.time - lastGroundedTime > jumpCoyoteTime)
         {
+            // Coyote time expired
+            canJump = false;
+        }
+
+        if (jumpBufferedAction.IsActing(jumpInputTracker.GetPressed(), canJump))
+        {
+            // These lines of code will run during the full time the player is jumping.
             velocity.y = jumpStrength;
             jumpState = JumpState.Jumping;
+            // Invalidate coyote time after jumping
+            lastGroundedTime = -Mathf.Infinity;
         }
         else
         {
             if (IsGrounded())
             {
                 jumpState = JumpState.Grounded;
+                lastGroundedTime = Time.time;
+                canJump = true;
             }
             else if (velocity.y > 0)
             {
@@ -114,22 +131,26 @@ public class PlayerMovement : MonoBehaviour
 
     bool IsGrounded()
     {
+        if (controller.isGrounded)
+        {
+            return true;
+        }
+
         // Get the bottom center of the character capsule
         float radius = controller.radius;
         float height = controller.height;
         Vector3 center = controller.transform.position + controller.center;
-        Vector3 bottom = center - Vector3.up * (height / 2f);
 
         // Cast a sphere slightly below the character
-        float castDistance = controller.skinWidth + extraGroundCheckDistance;
+        float castDistance = height / 2f - radius + controller.skinWidth;
 
         return Physics.SphereCast(
-            bottom,
-            radius * 0.9f,  // Slightly smaller radius to avoid edge cases
+            center,
+            radius * 0.99f,  // Slightly smaller radius to avoid edge cases
             Vector3.down,
             out RaycastHit hit,
-            castDistance,
-            ~0,  // Or specify your ground layers
+            castDistance + extraGroundCheckDistance,
+            LayerMask.GetMask("Terrain"),
             QueryTriggerInteraction.Ignore
         );
     }

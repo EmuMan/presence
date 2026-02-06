@@ -9,22 +9,23 @@ public class PlayerShoot : MonoBehaviour
     private InputAction shootAction;
 
     private Vector3 lastShootPosition;
-    private bool justShot;
+    private InputTracker shootInputTracker = new InputTracker();
+    private RepeatingAction shootRepeatingAction = new RepeatingAction(0.5f);
 
     void Start()
     {
         shootAction = InputSystem.actions.FindAction("Attack");
-        shootAction.started += ctx => RequestShoot();
         shootAction.Enable();
+    }
+
+    public void Update()
+    {
+        RequestShootIfPressed();
     }
 
     public void FixedUpdate()
     {
-        if (justShot)
-        {
-            justShot = false;
-            ShootAtPosition(lastShootPosition);
-        }
+        MaybeShoot();
     }
 
     void OnDrawGizmos()
@@ -38,10 +39,12 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    public void RequestShoot()
+    public void RequestShootIfPressed()
     {
-        lastShootPosition = GetMouseWorldPosition(Camera.main, transform.position.y);
-        justShot = true;
+        if (shootInputTracker.SetPressed(shootAction.IsPressed()))
+        {
+            lastShootPosition = GetMouseWorldPosition(Camera.main, transform.position.y);
+        }
     }
 
     public Vector3 GetMouseWorldPosition(Camera camera, float planeY)
@@ -64,5 +67,13 @@ public class PlayerShoot : MonoBehaviour
         Vector3 direction = (targetPosition - shootPoint.position).normalized;
         GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.LookRotation(direction));
         projectile.GetComponent<BasicProjectile>().Initialize(direction);
+    }
+
+    public void MaybeShoot()
+    {
+        if (shootRepeatingAction.IsActing(shootInputTracker.GetPressed(), true, Time.fixedDeltaTime))
+        {
+            ShootAtPosition(lastShootPosition);
+        }
     }
 }

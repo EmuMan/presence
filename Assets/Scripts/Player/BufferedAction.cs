@@ -67,4 +67,10 @@ public class BufferedAction
             return false;
         }
     }
+
+    public void ForceReset()
+    {
+        inputPressed = false;
+        isBeingActivated = false;
+    }
 }
