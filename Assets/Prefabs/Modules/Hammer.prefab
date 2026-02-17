@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42,11 +42,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -62,7 +62,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
       propertyPath: m_Name
-      value: hammer
+      value: Hammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 90a7e7518f3451dd4ad47d38d0937e75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -91,9 +119,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HammerModule
   moduleData: {fileID: 11400000, guid: 076cdb01a441f1537999008804b21c93, type: 2}
   playerObject: {fileID: 0}
-  hammerDownAngle: -90
+  hammerDownAngle: 90
   hammerUpAngle: 0
-  hammerWindUpAngle: 45
+  hammerWindUpAngle: -45
   windUpTime: 0.2
   swingTime: 0.1
   recoveryTime: 0.2

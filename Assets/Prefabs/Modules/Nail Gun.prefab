@@ -86,19 +86,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8331907319863470638, guid: e97d1c309b09b86ca8ed268fd4d21aed, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8331907319863470638, guid: e97d1c309b09b86ca8ed268fd4d21aed, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8331907319863470638, guid: e97d1c309b09b86ca8ed268fd4d21aed, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8331907319863470638, guid: e97d1c309b09b86ca8ed268fd4d21aed, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8331907319863470638, guid: e97d1c309b09b86ca8ed268fd4d21aed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -106,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8331907319863470638, guid: e97d1c309b09b86ca8ed268fd4d21aed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -134,4 +134,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NailGunModule
   moduleData: {fileID: 11400000, guid: 47735a3f2cd8c15209accb5beaa7fa9d, type: 2}
+  playerObject: {fileID: 0}
   nailPrefab: {fileID: 5774805946932156845, guid: f7c3b448562786e26bce186f0e0a2015, type: 3}

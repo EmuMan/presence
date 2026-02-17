@@ -3,9 +3,9 @@ using System.Collections;
 
 public class HammerModule : Module
 {
-    public float hammerDownAngle = -90.0f;
+    public float hammerDownAngle = 90.0f;
     public float hammerUpAngle = 0.0f;
-    public float hammerWindUpAngle = 45.0f;
+    public float hammerWindUpAngle = -45.0f;
 
     public float windUpTime = 0.2f;
     public float swingTime = 0.05f;
@@ -26,7 +26,7 @@ public class HammerModule : Module
         while (elapsed < windUpTime)
         {
             float angle = Mathf.Lerp(hammerUpAngle, hammerWindUpAngle, elapsed / windUpTime);
-            transform.localRotation = Quaternion.Euler(0, 0, angle);
+            transform.localRotation = Quaternion.Euler(angle, 0, 0);
             elapsed += Time.deltaTime;
             yield return null;
         }
@@ -36,7 +36,7 @@ public class HammerModule : Module
         while (elapsed < swingTime)
         {
             float angle = Mathf.Lerp(hammerWindUpAngle, hammerDownAngle, elapsed / swingTime);
-            transform.localRotation = Quaternion.Euler(0, 0, angle);
+            transform.localRotation = Quaternion.Euler(angle, 0, 0);
             elapsed += Time.deltaTime;
             yield return null;
         }
@@ -48,7 +48,7 @@ public class HammerModule : Module
         while (elapsed < recoveryTime)
         {
             float angle = Mathf.Lerp(hammerDownAngle, hammerUpAngle, elapsed / recoveryTime);
-            transform.localRotation = Quaternion.Euler(0, 0, angle);
+            transform.localRotation = Quaternion.Euler(angle, 0, 0);
             elapsed += Time.deltaTime;
             yield return null;
         }
