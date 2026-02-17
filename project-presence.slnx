@@ -1,0 +1,16 @@
+﻿<Solution>
+  <Project Path="Unity.Collections.csproj" />
+  <Project Path="Unity.Collections.Tests.csproj" />
+  <Project Path="Unity.Collections.PerformanceTests.csproj" />
+  <Project Path="Unity.PerformanceTesting.csproj" />
+  <Project Path="Unity.Collections.CodeGen.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="Unity.Sysroot.Linux_x86_64.EditorTests.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Unity.Collections.DocCodeSamples.csproj" />
+  <Project Path="Unity.Toolchain.Linux-x86_64-Linux.csproj" />
+  <Project Path="Unity.Collections.Editor.csproj" />
+  <Project Path="Unity.Collections.BurstCompatibilityGen.csproj" />
+  <Project Path="Unity.Toolchain.Linux-x86_64-Linux.EditorTests.csproj" />
+  <Project Path="Unity.Sysroot.Linux_x86_64.csproj" />
+</Solution>
