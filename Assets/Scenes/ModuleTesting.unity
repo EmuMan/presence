@@ -785,9 +785,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerModules
   headModule: {fileID: 0}
   coreModule: {fileID: 0}
-  leftArmModule: {fileID: 2085372451217155788}
+  leftArmModule: {fileID: 2085372451217155790}
   rightArmModule: {fileID: 0}
   movementModule: {fileID: 0}
+  headInputAction:
+    m_Name: Head Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 46e43fb2-58c1-41cd-8a6f-f12868bb883d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  coreInputAction:
+    m_Name: Core Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d3416710-785d-4103-afbf-9155690f2b05
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  leftArmInputAction:
+    m_Name: Left Arm Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: af6811ac-17ef-4080-8bcf-fc895a2d35ff
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  rightArmInputAction:
+    m_Name: Right Arm Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9c92e8a7-f894-48ea-8d01-f9a4e135fea3
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  movementInputAction:
+    m_Name: Movement Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9dac6fd0-2cc9-4eeb-8db6-e7fb920c00bc
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &1612298235
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,22 +1114,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f86bea9fcf7c2996a74de4d5642c91e, type: 3}
---- !u!114 &2085372451217155788 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2470062372516265417, guid: 1f86bea9fcf7c2996a74de4d5642c91e, type: 3}
-  m_PrefabInstance: {fileID: 2085372451217155787}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 567dbc4f03915de939b44b6e9a2d4ead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Module
 --- !u!4 &2085372451217155789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4441568678099568895, guid: 1f86bea9fcf7c2996a74de4d5642c91e, type: 3}
   m_PrefabInstance: {fileID: 2085372451217155787}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2085372451217155790 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7560790270561500129, guid: 1f86bea9fcf7c2996a74de4d5642c91e, type: 3}
+  m_PrefabInstance: {fileID: 2085372451217155787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c4919393fee1b8acb079864dfaae25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NailGunModule
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -114,14 +114,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e97d1c309b09b86ca8ed268fd4d21aed, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2470062372516265417}
+      addedObject: {fileID: 7560790270561500129}
   m_SourcePrefab: {fileID: 100100000, guid: e97d1c309b09b86ca8ed268fd4d21aed, type: 3}
 --- !u!1 &3956499695581270597 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e97d1c309b09b86ca8ed268fd4d21aed, type: 3}
   m_PrefabInstance: {fileID: 4190923067664183060}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2470062372516265417
+--- !u!114 &7560790270561500129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3956499695581270597}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 567dbc4f03915de939b44b6e9a2d4ead, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c4919393fee1b8acb079864dfaae25d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Module
+  m_EditorClassIdentifier: Assembly-CSharp::NailGunModule
   moduleData: {fileID: 11400000, guid: 47735a3f2cd8c15209accb5beaa7fa9d, type: 2}
+  nailPrefab: {fileID: 5774805946932156845, guid: f7c3b448562786e26bce186f0e0a2015, type: 3}

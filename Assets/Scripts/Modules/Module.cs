@@ -36,13 +36,13 @@ public class Module : MonoBehaviour
     /// <param name="input">Whether the input for this action is currently active (e.g. button held).</param>
     /// <param name="deltaTime">The time in seconds since the last update, used to manage timing for
     /// cooldowns and action repeats.</param>
-    public void PerformActionIfAvailable(bool input, float deltaTime)
+    public void PerformActionIfAvailable(bool input, float deltaTime, Vector3 direction)
     {
         if (moduleData.isRepeating)
         {
             if (repeatingAction.IsActing(input, true, deltaTime))
             {
-                PerformAction();
+                PerformAction(direction);
             }
         }
         else
@@ -54,13 +54,13 @@ public class Module : MonoBehaviour
 
             if (bufferedAction.IsActing(input, cooldown <= 0.0f))
             {
-                PerformAction();
+                PerformAction(direction);
                 cooldown = moduleData.cooldownDuration;
             }
         }
     }
 
-    protected void PerformAction()
+    protected virtual void PerformAction(Vector3 direction)
     {
         Debug.Log($"Performing action for module: {moduleData.moduleName}");
     }

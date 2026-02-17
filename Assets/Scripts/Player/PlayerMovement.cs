@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
         Jumping,
         Rising,
         Falling
-    } 
+    }
 
     public float speed = 5.0f;
     public float jumpStrength = 5.0f;
@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
             canJump = false;
         }
 
-        if (jumpBufferedAction.IsActing(jumpInputTracker.GetPressed(), canJump))
+        if (jumpBufferedAction.IsActing(jumpInputTracker.IsPressed(), canJump))
         {
             // These lines of code will run during the full time the player is jumping.
             velocity.y = jumpStrength;

@@ -52,15 +52,11 @@ public class PlayerShoot : MonoBehaviour
         {
             // lastShootPosition = GetMouseWorldPosition(Camera.main, transform.position.y);
             Vector2 dummy = lookAction.ReadValue<Vector2>();
-            Vector2 test = new Vector2(0,0);
-           
-            Debug.Log(dummy);
-            Debug.Log(test);
-            
+            Vector2 test = new Vector2(0, 0);
+
             if (dummy != test)
             {
                 lastShootPosition = new Vector3(dummy.x + shootPoint.position.x, shootPoint.position.y, dummy.y + shootPoint.position.z);
-                Debug.Log("bruh");
             }
         }
         /* get direction  */
@@ -83,6 +79,7 @@ public class PlayerShoot : MonoBehaviour
 
     public void ShootAtPosition(Vector3 targetPosition)
     {
+        return;
         Vector3 direction = (targetPosition - shootPoint.position).normalized;
         GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.LookRotation(direction));
         projectile.GetComponent<BasicProjectile>().Initialize(direction);
