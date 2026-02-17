@@ -4,7 +4,7 @@ public class Module : MonoBehaviour
 {
     public ModuleData moduleData;
 
-    private GameObject playerObject;
+    public GameObject playerObject;
 
     // Depending on the type of action, only one of these will be non-null
     private BufferedAction bufferedAction;

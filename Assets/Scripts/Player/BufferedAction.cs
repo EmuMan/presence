@@ -17,9 +17,9 @@ using UnityEngine;
 ///
 /// To use this class, create an instance of BufferedAction with the desired buffer and hold
 /// durations. Then, in your update loop (likely FixedUpdate in this project), call the
-/// IsActing method with the current input state, whether the action is allowed, and the delta
-/// time since the last update. The IsActing method will return true if the action should be
-/// performed during that update, based on the timing and input conditions.
+/// IsActing method with the current input state and whether the action is allowed. The
+/// IsActing method will return true if the action should be performed during that update,
+/// based on the timing and input conditions.
 ///
 /// Note that IsActing should be called every update to properly manage the timing and state
 /// of the action, even if the input is not currently active, as it needs to track the time
