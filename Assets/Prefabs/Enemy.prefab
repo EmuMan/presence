@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 503405340737609242}
   - component: {fileID: 8393244999948473454}
   - component: {fileID: 5438732442827605740}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 1498236393389872178}
   - component: {fileID: 5204889252350846611}
   - component: {fileID: 533380348323600131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4764803175013434167}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
