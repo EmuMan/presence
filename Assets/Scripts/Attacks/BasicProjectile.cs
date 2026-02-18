@@ -34,6 +34,12 @@ public class BasicProjectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision _collision)
     {
+        if (_collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            Debug.Log("Hit Enemy!");
+            EnemyMovement.Instance.hit();
+            /* placeholder to show functionality */
+        }
         Destroy(gameObject);
     }
 }

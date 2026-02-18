@@ -10,8 +10,14 @@ public class BulletMovement : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         transform.position += transform.forward * speed * Time.deltaTime;
     }
+
+    private void OnCollisionEnter(Collision _collision)
+    {
+        Destroy(gameObject);
+    }
+    
 }
