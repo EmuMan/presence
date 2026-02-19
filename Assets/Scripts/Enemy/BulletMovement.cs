@@ -5,6 +5,8 @@ public class BulletMovement : MonoBehaviour
     public float speed = 10f;
     public float lifetime = 5f;
 
+    public int damage = 5;
+
     void Start()
     {
         Destroy(gameObject, lifetime);
@@ -17,6 +19,11 @@ public class BulletMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision _collision)
     {
+        if (_collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            HealthBar2.Instance.hit(damage);
+        }
+        
         if (_collision.gameObject.layer != LayerMask.NameToLayer("PlayerAttacks") || _collision.gameObject.layer != LayerMask.NameToLayer("EnemyAttacks"))
         {
             Destroy(gameObject);
