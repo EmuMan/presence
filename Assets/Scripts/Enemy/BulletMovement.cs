@@ -17,7 +17,10 @@ public class BulletMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision _collision)
     {
-        Destroy(gameObject);
+        if (_collision.gameObject.layer != LayerMask.NameToLayer("PlayerAttacks") || _collision.gameObject.layer != LayerMask.NameToLayer("EnemyAttacks"))
+        {
+            Destroy(gameObject);
+        }
     }
     
 }
