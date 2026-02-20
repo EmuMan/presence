@@ -175,5 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3cb6579d581e7ff2a26939d5bd27e6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamagingHitbox
-  damage: 5
+  damage: 1
   singleHit: 1
+  damageInterval: 0.2
